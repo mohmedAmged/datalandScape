@@ -4,7 +4,7 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage({
-    keyFilename: './landscapedata-f06c3640da25.json',
+    keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     projectId: 'landscapedata',
 });
 
