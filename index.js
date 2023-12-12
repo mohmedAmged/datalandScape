@@ -52,7 +52,11 @@ server.use((req, res, next) => {
         next();
     }
 });
-
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://mohmedamged.github.io/landScapeV03/');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 
 const port = process.env.PORT || 8080; //  chose port from here like 8080, 3001
